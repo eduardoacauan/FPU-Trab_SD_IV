@@ -1,3 +1,4 @@
+// Essa testbench testa diversos casos, para averiguar como a FPU se comporta.
 `timescale 1ns/1ps
 import States::*;
 
@@ -6,7 +7,7 @@ module FPU_tb;
     logic        calc, clock, reset;
     State_e      state_out;
 
-    FPU dut (
+    FPU dut ( // mapeia os inputs e outputs
         .op_A_in(op_A_in),
         .op_B_in(op_B_in),
         .clock(clock),
@@ -16,7 +17,7 @@ module FPU_tb;
         .calc(calc)
     );
 
-    // Clock generation
+    // Clock de 100khz
     initial begin
         clock = 0;
         forever #5000 clock = ~clock;
@@ -44,6 +45,8 @@ module FPU_tb;
         #10000 reset = 1;
 
         // --------- TEST CASES ----------
+
+        // Os estados nao estao funcionando direito
 
         run_test(32'b0_011111_1000000000000000000000000, // 1.5
                  32'b0_100000_0100000000000000000000000, // 2.5
