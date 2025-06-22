@@ -5,6 +5,7 @@ Este projeto implementa uma **FPU personalizada de 32 bits**, com suporte a **op
 ## Formato de representação
 
   X = ( 8 - ( 2 + 4 + 1 + 0 + 3 + 2 + 0 + 0 + 2 ) % 4 ) = 6
+  
   Y = 31 - 6 = 25
   
 ## Conteudo
