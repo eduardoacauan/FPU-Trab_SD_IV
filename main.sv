@@ -16,7 +16,7 @@ logic        inexact_flag, overflow_flag, underflow_flag;
 
 localparam int BIAS = 31;
 
-// ===================== FUN«√O SOMA =====================
+// ===================== FUN√á√ÉO SOMA =====================
 function automatic bit [31:0] Sum(input bit [31:0] a, b,
                                   output bit inexact,
                                   output bit overflow,
@@ -82,7 +82,7 @@ function automatic bit [31:0] Sum(input bit [31:0] a, b,
     return {sign, final_exp_real[5:0] + BIAS, mantRes[24:0]};
 endfunction
 
-// ===================== FUN«√O SUBTRA«√O =====================
+// ===================== FUN√á√ÉO SUBTRA√á√ÉO =====================
 function automatic bit [31:0] Sub(input bit [31:0] a, b,
                                   output bit inexact,
                                   output bit overflow,
@@ -171,7 +171,7 @@ always_ff @(posedge clock) begin
         end
 
         data_out <= result_reg;
-
+        // os estados nao estao funcionando corretamente
         if (overflow_flag)
             state_out <= OVERFLOW;
         else if (underflow_flag)
